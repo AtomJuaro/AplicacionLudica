@@ -1,0 +1,8 @@
+T - Jose - 29
+M - Jose - 8
+T - Antonio - 25
+M - Antonio - 8
+T - Juarez - 40
+M - Juarez - 9
+T - Tony - 16
+M - Tony - 6

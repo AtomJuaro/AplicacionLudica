@@ -1,0 +1,122 @@
+\****
+\ImplementaciónNaturalística-CUConsultarPuntuaciones
+\Definición de las rutinas que permiten consultar las listas de puntuaciones.
+\Autor: José Antonio Juárez Romero
+\Version: 05/22
+\****
+to consult the scores:
+  initialize the level query interface.
+  show the level query interface.
+  Loop.
+    wait for an event.
+    If the event is nil, break.
+    If the event's kind is not "left click", repeat.
+    If the event's spot is in the easy level query button, check the scores given "Facil"; exit. 
+    If the event's spot is in the medium level query button, check the scores given "Medio"; exit.
+    If the event's spot is in the hard level query button, check the scores given "Dificil"; exit.
+    If the event's spot is in the home button, show levels; exit.
+    repeat.
+
+To check the scores given a level string:
+    clear the memory.
+    if the level is "Facil", put "C:\AplicacionLudica\Persistencia\easyScores.txt"  into a path.
+    if the level is "Medio", put "C:\AplicacionLudica\Persistencia\mediumScores.txt"  into the path.
+    if the level is "Dificil", put "C:\AplicacionLudica\Persistencia\hardScores.txt"  into the path.
+    read the path into a buffer called original. 
+    slap a rider on the original.
+    Loop.
+      get a string from the original given the rider.
+      if the string is blank, break.
+      create score records given the string.
+   repeat.
+   build lists given the score records.
+   sort the time records.
+   sort the movement records.
+   display the scores given the level.
+
+a score record is a thing with a criterion string, a player string and a score string.
+the score records are some score records.
+the time records are some score records.
+the movement records are some score records.
+
+to clear the memory:
+  destroy the score records.
+  destroy the time records.
+  destroy the movement records.
+
+to display the scores given a level string:
+  initialize the scores interface.
+  show the scores interface given the level.
+  Loop.
+    Deque an event.
+    If the event is nil, break.
+    If the event's kind is not "left click", repeat.
+    If the event's spot is in the home button, show levels; exit.
+    repeat.
+
+To get a string from a buffer given a rider:
+  Clear the string.
+  If the rider's source is blank, exit.
+  Move the rider (text file rules).   
+  If the rider's token is blank, exit.
+  Put the rider's token into the string.
+
+
+To add a criterion string and a player string and a score string to some score records:
+  Allocate memory for a score record.
+  Put the criterion into the score record's criterion.
+  Put the player to the score record's player.
+  Put the score to the score record's score.
+  Append the score record to the score records.
+
+
+To build lists given a score records:
+  Loop.
+    Get a score record from the score records.
+    if the score record is nil, exit.
+    if the score record's criterion is "T", add the score record's criterion and the score record's player and the score record's score to the time records.
+    if the score record's criterion is "M", add the score record's criterion and the score record's player and the score record's score to the movement records.
+  repeat.
+
+To print some score records:
+  Loop.
+    Get a score record from the score records.
+    If the score record is nil, exit.
+    Write the score record's criterion then " - " to the console without advancing.
+    Write the score record's player then " - " to the console without advancing.
+    Write the score record's score then "  " to the console.
+  Repeat.
+
+ To show some score records:
+  Loop.
+    Get a score record from the score records.
+    If the score record is nil, exit.
+    debug the score record's criterion then "-" then the score record's player then "-" then the score record's score.
+  Repeat.
+
+To sort some score records:
+    If the score records' first is the score records' last, exit.
+    Split the score records into some left score records and some right score records.
+    Sort the left score records.
+    Sort the right score records.
+  Loop.
+      Put the left score records' first into a left score record.
+      Put the right score records' first into a right score record.
+      If the left score record is nil, append the right score records to the score records; exit.
+      If the right score record is nil, append the left score records to the score records; exit.
+      If the left score record's score is greater than the right score record's score,
+      Move the right score record from the right score records to the score records; repeat.
+      Move the left score record from the left score records to the score records.
+  Repeat.
+
+
+to create score records given a record string:
+  get a token from the record.
+  put the token into a criterion string.
+  get the token from the record.
+  get the token from the  record.
+  put the token into a player string.
+  get the token from the  record.
+  get the token from the  record.
+  put the token into a score string.
+  add the criterion and the player and the score to the score records.

@@ -1,0 +1,31 @@
+\****
+\ImplementaciónNaturalística-CUTerminarJuego
+\Al completar el puzzle, el sistema registra las puntuaciones y muestra el puntaje de la partida.
+\Autor: José Antonio Juárez Romero
+\Version: 05/22
+\****
+To finish the game given a level string:
+  if the num moves is less than 3, check the puzzle; show levels; exit.
+  show results given the level.
+  Register the score.  
+  Loop.
+    Deque an event.
+    If the event is nil, break.
+    If the event's kind is not "left click", repeat.
+    If the event's spot is in the end button, show levels; exit.
+    Repeat.
+
+to show results given a level string:
+  initialize the result interface.
+  stop the timer.
+  DIVIDE the timer's ticks by 1000  GIVING a quotient AND a remainder.
+  put the level into the score's level.
+  add the quotient to the score's time.
+  add the num moves to the score's movs.
+  show result interface.
+
+to check the puzzle:
+  debug "ATENCIÓN: ROMPECABEZAS NO TERMINADO.  REINICIA.".
+
+
+the confirm button is an action button.

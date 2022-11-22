@@ -1,0 +1,129 @@
+\****
+\ImplementaciónNaturalística-CUIniciarJuego
+\Definición de las rutinas que solicitan el nombre del jugador e inician el juego
+\Autor: José Antonio Juárez Romero
+\Version: 05/22
+\****
+to start the game with easy difficulty given a location: 
+ put "Facil" to the current difficulty.
+  restart counters. 
+  request player name.
+  Create a puzzle from the location with the easy level' piece size.
+  Display the puzzle.
+  Loop.
+    Wait for an event.
+    If the event is nil, break.
+    If the event's kind is not "left click", repeat.
+    if the event's kind is "left click", handle clicks.
+    If the event's spot is in the check button, put the location to the select location;finish the game given the current difficulty; exit.
+    If the event's spot is in the back button, show images of the easy level; exit.
+    Track the mouse on the puzzle.
+    Repeat.
+    Destroy the puzzle.
+
+to restart counters:
+  Start the timer.
+  put 0 to the num moves.
+  put the score's time to 0.
+  put the score's movs to 0.
+
+To request player name :
+  show request interface.
+  Handle any events.
+
+
+to handle clicks:
+  add 1 to the num moves. 
+
+to go to medium difficulty puzzle given a location:
+  put "Medio" to the current difficulty.
+  restart counters.
+  request player name.
+  Create a puzzle from the location with the medium level' piece size.
+  Display the puzzle.
+  Loop.
+    Deque an event.
+    If the event is nil, break.
+    If the event's kind is not "left click", repeat.
+    if the event's kind is "left click", handle clicks.
+    If the event's spot is in the check button,  put the location to the select location;finish the game given the current difficulty; exit.
+    If the event's spot is in the back button, quit; go to level medium; exit.
+    Track the mouse on the puzzle.
+    Repeat.
+    Destroy the puzzle.
+
+
+to go to hard difficulty puzzle given a location:
+  put "Dificil" to the current difficulty.
+  restart counters.
+  request player name.
+  Create a puzzle from the location with the hard level' piece size.
+  Display the puzzle.
+  Loop.
+    Deque an event.
+    If the event is nil, break.
+    If the event's kind is not "left click", repeat.
+    if the event's kind is "left click", handle clicks.
+    If the event's spot is in the check button,  put the location to the select location;finish the game given the current difficulty; exit.
+    If the event's spot is in the back button, quit; go to level hard; exit.
+    Track the mouse on the puzzle.
+    Repeat.
+    Destroy the puzzle.
+
+
+a location is a string.
+the timer is a timer.
+the num moves is a number.
+the select location is a string.
+the current difficulty is a string.
+
+\*** Name request events ***
+To handle any events:
+  Deque an event.
+  If the event is nil, exit.
+  Handle the event(request player name).
+  Repeat.
+
+To handle an event(request player name):
+  If the event's kind is "set cursor", handle the event (set cursor); exit. 
+  If the event's kind is "key down", handle the event (key down); exit.
+  If the event's kind is "left click", handle the event (left click); exit.
+
+To handle an event (key down):
+  If the event is modified, handle the event (shortcut); exit. [Un evento se considera modificado si la tecla alt o ctrl estan precionadas]
+  If the event's byte is printable, handle the event (printable); exit. 
+  Put the event's key into a key.
+  If the key is the escape key, handle the event (escape); exit.
+  If the key is the backspace key, handle the event (backspace); exit. 
+  If the key is the enter key, handle the event (enter); exit.
+
+\*** Text events ***
+To handle an event (set cursor):
+  Show the arrow cursor.
+
+To handle an event (printable):
+  Append the event's byte to the text's string. 
+  show request interface.
+
+To handle an event (escape): 
+  Clear the text's string. 
+  show request interface.
+
+To handle an event (backspace):
+  If the text's string is blank, cluck; exit. 
+  Remove the last byte from the text's string. 
+  show request interface.
+
+To handle an event (enter):
+  go register name. 
+
+To handle an event (shortcut):
+
+To handle an event (left click):
+  If the event's spot is in the accept button, go register name.
+
+  to go register name:
+    loop.
+    if the player' name is not blank, put the text's string to the score's player; quit;exit.
+    if the text's string is not blank, put the text's string to the score's player; quit; exit.
+    repeat.

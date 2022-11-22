@@ -1,0 +1,19 @@
+\****
+\ImplementaciónNaturalística-CUSeleccionarNivel
+\Muestas los tres niveles de dificultad y permite selecconar uno.
+\Autor: José Antonio Juárez Romero
+\Version: 05/22
+\****
+
+To show levels:
+    display the difficulty levels.
+    Loop.
+    Deque an event.
+    If the event is nil, break.
+    If the event's kind is not "left click", repeat.
+    If the event's spot is in the easy level button, show images of the easy level. 
+    If the event's spot is in the medium level button,go to level medium.
+    If the event's spot is in the hard level button, go to level hard.
+    If the event's spot is in the score button, consult the scores.
+    If the event's spot is in the quit button, close the program; exit.
+    repeat.

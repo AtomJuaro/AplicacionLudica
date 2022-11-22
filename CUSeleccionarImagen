@@ -1,0 +1,45 @@
+\****
+\ImplementaciónNaturalística-CUSeleccionarImagen
+\Muestra las miniaturas de imagen del nivel y permite seleccionar una
+\Autor: José Antonio Juárez Romero
+\Version: 05/22
+\****
+
+to show images of the easy level:
+  show level thumbnails given the easy level' difficulty . 
+  Loop.
+    Deque an event.
+    If the event is nil, break.
+    If the event's kind is not "left click", repeat.
+     If the event's spot is in the picture button one, start the game with easy difficulty given the easy level' image1.
+     If the event's spot is in the picture button two, start the game with easy difficulty given the easy level' image2.
+    If the event's spot is in the picture button three, start the game with easy difficulty  given the easy level' image3.
+    If the event's spot is in the picture button four, start the game with easy difficulty  given the easy level' image4.
+    If the event's spot is in the return button, show levels; exit.
+    repeat.
+
+to go to level medium:
+  show level thumbnails given the medium level' difficulty . 
+  Loop.
+    Deque an event.
+    If the event is nil, break.
+    If the event's kind is not "left click", repeat.
+     If the event's spot is in the picture button one, go to medium difficulty puzzle given the medium level' image1.
+     If the event's spot is in the picture button two,  go to medium difficulty puzzle given the medium level' image2.
+    If the event's spot is in the picture button three,  go to medium difficulty puzzle given the medium level' image3.
+    If the event's spot is in the picture button four, go to medium difficulty puzzle given the medium level' image4.
+    If the event's spot is in the return button, show levels; exit.
+    repeat.
+
+to go to level hard:
+  show level thumbnails given the hard level' difficulty . 
+  Loop.
+    Deque an event.
+    If the event is nil, break.
+    If the event's kind is not "left click", repeat.
+     If the event's spot is in the picture button one, go to hard difficulty puzzle given the hard level' image1.
+     If the event's spot is in the picture button two, go to hard difficulty puzzle given the hard level' image2.
+    If the event's spot is in the picture button three, go to hard difficulty puzzle given the hard level' image3.
+    If the event's spot is in the picture button four, go to hard difficulty puzzle given the hard level' image4.
+    If the event's spot is in the return button, show levels; exit.
+    repeat.

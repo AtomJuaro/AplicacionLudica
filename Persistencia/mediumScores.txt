@@ -1,0 +1,6 @@
+T - Diego - 4
+M - Diego - 1
+T - Antonio - 22
+M - Antonio - 10
+T - Jose - 18
+M - Jose - 3

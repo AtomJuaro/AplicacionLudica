@@ -1,0 +1,46 @@
+\****
+\ImplementaciónNaturalística-IdeasAtomicas
+\Definición de las ideas atómicas del sistema
+\Autor: José Antonio Juárez Romero
+\Version: 05/22
+\****
+A level has 
+A difficulty string,
+An image1 string,
+An image2 string,
+An image3 string,
+An image4 string and
+A piece size number.
+
+A player has a name string.
+
+A score has a level string, a player string, a time number and a movs number.
+the score is a score.
+
+\*** easy level specs ***
+the easy level is a level.
+the easy level' difficulty is "Nivel facil".
+the easy level' image1 is "\AplicacionLudica\img\gato.jpeg".
+the easy level' image2 is "\AplicacionLudica\img\torre eiffel.jpg".
+the easy level' image3 is "\AplicacionLudica\img\noche estrellada.jpg".
+the easy level' image4  is "\AplicacionLudica\img\playa.jpg". 
+the easy level' piece size is 3 inch. 
+\*** medium level specs ***
+the medium level is a level.
+the medium level' difficulty is "Nivel medio".
+the medium level' image1 is "\AplicacionLudica\img\gato.jpeg".
+the medium level' image2 is "\AplicacionLudica\img\torre eiffel.jpg".
+the medium level' image3 is "\AplicacionLudica\img\noche estrellada.jpg".
+the medium level' image4  is "\AplicacionLudica\img\playa.jpg". 
+the medium level' piece size is 2 inch. 
+\*** hard level specs ***
+the hard level is a level.
+the hard level' difficulty is "Nivel dificil".
+the hard level' image1 is "\AplicacionLudica\img\gato.jpeg".
+the hard level' image2 is "\AplicacionLudica\img\torre eiffel.jpg".
+the hard level' image3 is "\AplicacionLudica\img\noche estrellada.jpg".
+the hard level' image4  is "\AplicacionLudica\img\playa.jpg". 
+the hard level' piece size is 1-1/2 inch. 
+
+the player' name is "".
+the level' difficulty is "".

@@ -1,0 +1,483 @@
+\****
+\ImplementaciónNaturalística-Interfaz
+\Definición de las rutinas que construyen y dibujan la interfaz.
+\Autor: José Antonio Juárez Romero
+\Version: 05/22
+\****
+
+\*** starter and finisher ***
+To initialize our stuff: 
+  Create the background.
+  Initialize the buttons.
+  initialize the level thumbnails.
+  initialize the name request interface.
+  initialize the text.  
+
+To finalize our stuff: 
+  Destroy the background.
+To close the program:
+  quit.
+
+to finalize home:
+  destroy the background.
+
+To display the difficulty levels:
+  Show the arrow cursor.
+  Draw the background. 
+  Write the message.
+  Draw the easy level button.
+  Draw the medium level button.
+  Draw the hard level button.
+  Draw the quit button.
+  Draw the score button.
+  Refresh the screen.
+
+To show everything without refreshing:
+  Show the arrow cursor.
+  Draw the background. 
+  Draw the easy level button.
+  Draw the medium level button.
+  Draw the hard level button.
+  Draw the score button.
+  Draw the quit button.
+
+To write the message:
+  Use large letters.
+  Write "Selecciona el nivel" with the black pen at the top of the screen's box.
+
+To show everything in the puzzle:
+  show the arrow cursor.
+  Draw the back button.
+  Draw the check button.
+
+To show the start:
+  Show the arrow cursor.
+  Draw the background. 
+   Draw the easy level button.
+  Draw the medium level button.
+  Draw the hard level button.
+  Draw the quit button.  
+  Draw the score button.
+  refresh the screen.
+    
+The background is a picture.
+
+To create the background:
+  Draw the screen's box with the white color [borde] and the white color[relleno].  
+  refresh the screen.
+  Extract the background given the screen's box.
+
+\*** buttons definitions ***
+A button has a box, a picture and a name.  [definición de tipo, no de variable, no requieren asignacion de memoria, usan MAKE en lugar de CREATE]
+A action button is a button.
+
+To make a action button given a spot and a name:
+  Put the spot's x minus 1/2 inch minus the name's width into the action button's left. 
+  Put the spot's y minus 1/2 inch into the action button's top.
+  Put the spot into the action button's right-bottom.
+  Put the name into the action button's  name.
+
+To make a button given a spot and a name:
+  Put the spot's x minus 2 inch minus the name's width into the button's left.
+  Put the spot's y minus 3 inch into the button's top.
+  Put the spot into the button's right-bottom.
+  put the name into the button's name.
+
+To draw a button:
+  Fill the button's box with the white color.
+  if the button's name is "Nivel facil.", create picture level with the button and "\AplicacionLudica\img\facil.jpg" .
+  if the button's name is "Nivel medio.", create picture level with the button and "\AplicacionLudica\img\medio.jpg" .
+  if the button's name is "Nivel dificil.", create picture level with the button and "\AplicacionLudica\img\dificil.jpg" .
+  if the button's name is "Imagen1", create picture level with the button and the easy level' image1.  
+  if the button's name is "Imagen2", create picture level with the button and the easy level' image2 .  
+  if the button's name is "Imagen3", create picture level with the button and the easy level' image3.  
+  if the button's name is "Imagen4", create picture level with the button and the easy level' image4 .
+  if the button's name is "Salir", draw the button's name in the button's box with "center".
+  if the button's name is "Ver puntuaciones", draw the button's name in the button's box with "center".
+  if the button's name is "Volver", draw the button's name in the button's box with "center".
+  if the button's name is "Verificar", draw the button's name in the button's box with "center".
+  if the button's name is "Cancelar", draw the button's name in the button's box with "center".
+   if the button's name is "Aceptar", draw the button's name in the button's box with "center".
+  if the button's name is "Terminar", draw the button's name in the button's box with "center".
+  if the button's name is "Nivel fácil", draw the button's name in the button's box with "center".
+  if the button's name is "Nivel medio", draw the button's name in the button's box with "center".
+  if the button's name is "Nivel difícil", draw the button's name in the button's box with "center".
+  Draw  the button's box.
+
+To create picture level given a button and a string:  
+  allocate memory for the button's picture.
+  fetch the button's picture from the string.
+  Resize the button's picture to 2-1/2 inches by 2-1/2 inches.
+  Center the button's picture in the button's box.
+  draw the button's picture.
+
+To decide if a spot is in a button:  [desisores, rutinas para tomar desisiones]
+  If the spot is in the button's box, say yes. 
+  Say no.
+
+  The easy level button is a button.
+  The medium level button is a button.
+  The hard level button is a button.
+  The score button is an action  button.
+  The quit button is an action button.
+  the check button is an action button.
+  the back button is an action button.
+
+\*** button launcher - CU Seleccionar Niveles  ***
+To initialize the buttons:
+  Put the screen's top plus 5-1/2 inch into a spot's y.  
+  Put the screen's left plus 4-2/4 inch into the spot's x. 
+  make the easy level button given the spot and "Nivel facil.".
+  Put the medium level button's right plus  8 inch into the spot's x. 
+  make the medium level button given the spot and "Nivel medio.".
+  Put the hard level button's right plus 11-1/2 inch into the spot's x.
+  make the hard level button given the spot and "Nivel dificil.".
+  Put the screen's center-bottom into the spot.
+  Put the screen's bottom minus 1/2 inch into the spot's y.
+  Put the screen's left plus 8-1/2 inch into the spot's x. 
+  make the quit button given the spot and "Salir".
+  Put the screen's left plus 5-3/4 inch into the spot's x. 
+  make the score button given the spot and "Ver puntuaciones".
+   
+\*** thumbnails launcher ***
+To show level thumbnails given a string:
+  show the arrow cursor.
+  Draw the background. 
+  Write the image message given the string.
+  Draw the picture button one.
+  Draw the picture button two.
+  Draw the picture button three.
+  Draw the picture button four.
+  Draw the return button.
+  refresh the screen.  
+
+To write the image message given a string:
+  Use large letters.
+  Write the string then ": Selecciona una imagen" with the black pen at the top of the screen's box.
+  
+ The picture button one is a button.
+ The picture button two is a button.
+ The picture button three is a button.
+  The picture button four is a button.
+ The return button is a action button.
+
+To initialize the level thumbnails:
+  imagine a box 20 inch by 20 inch.
+  Move the box to the top left corner of the screen's box.
+  Draw and fill the box with the gray color.
+  Put the screen's top plus 5-1/2 inch into a spot's y.  
+  Put the screen's left plus 3-1/2 inch into the spot's x. 
+  make the picture button one given the spot and "Imagen1".
+  Put the picture button two's right plus 6-1/2 inch into the spot's x. 
+  make the picture button two given the spot and "Imagen2".
+  Put the picture button three's right plus 9-1/2 inch into the spot's x.
+  make the picture button three given the spot and "Imagen3".
+  Put the picture button four's right plus 12-1/2 inch into the spot's x.
+  make the picture button four given the spot and "Imagen4".
+  Put the screen's center-bottom into the spot.
+  Put the screen's bottom minus 1/2 inch into the spot's y.
+  Put the screen's left plus 7 inch into the spot's x. 
+  make the return button given the spot and "Volver".
+
+\constuctorla interfaz de solicitud del nombre
+To initialize the name request interface:
+  imagine the request box 3 inch by 3 inch.
+  put the request box in the center of the screen.
+  Put the request box's top plus 2-2/3 inch into a spot's y.  
+  Put the request box's left plus 2 inch into the spot's x. 
+  make the accept button given the spot and "Aceptar".
+
+
+  the accept button is a action button.
+  the request box is a box.
+
+ To show request interface:
+  show the arrow cursor.
+  Draw the background. 
+  Draw the picture button one.
+  Draw the picture button two.
+  Draw the picture button three.
+  Draw the picture button four.
+  Use large letters.
+ Write "Escribe tu nombre" with the black pen at the top of the screen's box.
+  Fill the request box with the white color.
+  Draw the request box.
+  Use small letters.
+  Write "Nombre del jugador: " with the black pen at the top of the request box.
+  Draw the accept button.
+  Draw the text.
+  Draw the text's box.
+  refresh the screen.
+
+The text has a box and a string.
+
+To initialize the text:
+  Put the request box's left plus 1/2 inch into the text's left.
+  Put the text's left plus 2 inches into the text's right.
+  Put the request box's top plus 1-1/2 inch into the text's top.
+  Put the request box's top plus 1 inch into the text's bottom.
+
+To draw the text:
+  Put the text's string then "_" into a string. 
+  Draw the string in the text's box.
+
+the end button is a action button.
+the result box is a box.
+the data box is a box.
+the level box is a box.
+the player box is a box.
+the time box is a box.
+the mov box is a box.
+
+To initialize the result interface:
+  imagine the result box 6 inch by 8 inch.
+  imagine the data box 6 inch by 5 inch.
+  imagine the level box 6 inch by 2/3 inch.
+  imagine the player box 6 inch by 2/3 inch.
+  imagine the time box 6 inch by 2/3 inch.
+  imagine the mov box 6 inch by 2/3 inch.
+  put the result box in the center of the screen.
+  put the data box in the center of the result box.
+  put the result box's top plus 3 inch into a spot's x.
+  Move the level box to the top left corner of the data box.
+  Move the player box to the top left corner of the data box.
+  Move the player box down 2/3 inch.
+  Move the time box to the top left corner of the data box.
+  Move the time box down 4/3 inch.
+  Move the mov box to the top left corner of the data box.
+  Move the mov box down 6/3 inch.
+  Put the result box's top plus 7-2/3 inch into the spot's y.  
+  Put the result box's left plus 3-1/2 inch into the spot's x. 
+  make the end button given the spot and "Terminar".
+
+ To show result interface:
+  show the arrow cursor.
+  Fill the result box with the white color.
+  Use medium letters.
+  Write "Felicidades. Juego terminado " with the black pen at the top of the result box.
+  Fill the data box with the white color.    
+  use small letters.
+  Write "  Nivel:   "then the score's level in the level box.
+  Write "  Jugador: " then the score's player in the player box.
+  Write "  Tiempo:   " then the score's time then " seg." in the time box.
+  Write "  # Mov:    " then the score's movs in the mov box.
+  Draw the result box.
+  Draw the data box.
+  Draw the end button.
+  refresh the screen.  
+
+The easy level query button is an action button.
+ the medium level query button is an action button.
+ the hard level query button is an action button.
+ the home button is an action button.
+ the score query box is a box.
+ the button query box is a box.
+
+to initialize the level query interface:
+  imagine the score query box 7 inch by 8 inch.
+  imagine the button query box 7 inch by 1/2 inch.
+  put the score query box in the center of the screen.
+  put the button query box in the center of the score query box.
+  put the button query box's left plus 1 inch into a spot's y.
+  put the  button query box's left plus 2 inch into the spot's x.
+  make the easy level query button given the spot and "Nivel fácil".
+  put the button query box's left plus 4 inch into the spot's x.
+  make the medium level query button given the spot and "Nivel medio".
+  put the button query box's left plus 6 inch into the spot's x.
+  make the hard level query button given the spot and "Nivel difícil".
+  Put the score query box's top plus 7 inch into the spot's y.  
+  Put the score query box's left plus 3-2/3 inch into the spot's x. 
+  make the home button given the spot and "Volver".
+
+to  show the level query interface:
+  show the arrow cursor.
+  Fill the score query box with the white color.
+  Use medium letters.
+  Write "Consulta de puntuaciones." with the black pen at the top of the score query box.
+  put the score query box's top plus 1-1/2 inch into a spot's y.
+  put the  score query box's left plus 1 inch into the spot's x.
+  Write " Seleccione una dificultad." at the spot with the black pen.  
+  Draw the score query box.
+  Draw the home button.
+  Draw the easy level query button.
+  Draw the medium level query button.
+  Draw the hard level query button.
+  refresh the screen.  
+
+
+the timelist box is a box.
+the movement list box is a box.
+the title box is a box.
+the name box is a box.
+the score box is a box.
+the title box two is a box.
+the name box two is a box.
+the score box two is a box.
+
+to initialize the scores interface:
+  imagine the score query box 7 inch by 8 inch.
+  imagine the timelist box 3 inch by 5-1/2 inch.
+  imagine the movement list box 3 inch by 5-1/2 inch.
+  imagine the title box 3 inch by 1/2 inch.
+   imagine the title box two 3 inch by 1/2 inch.
+  imagine the name box 1-1/2 inch by 1/2 inch.
+   imagine the score box 1-1/2 inch by 1/2 inch.
+  imagine the name box two 1-1/2 inch by 1/2 inch.
+   imagine the score box two  1-1/2 inch by 1/2 inch.
+  put the score query box in the center of the screen.
+  put the movement list box in the center of the screen.
+  move the movement list  box to the left of the score query box.
+  move the movement list  box down 1/7 inch.
+  move the movement list  box right 1/3 inch.
+  move the title box to the top left corner of the movement list box.
+  move the title box down 1-1/4 inch.
+  move the name box to the top left corner of the title box.
+  move the score box to the top left corner of the title box.
+  move the score box right 1-1/2 inch.
+  move the timelist box to the right of the score query box.
+  move the timelist  box down 1-3/5 inch.
+  move the timelist box left 1/3 inch.
+  move the title box to the top left corner of the movement list box.
+  move the title box down 1-1/4 inch.
+  move the name box to the top left corner of the title box.
+  move the score box to the top left corner of the title box.
+  move the score box right 1-1/2 inch.
+  
+  move the title box two to the top left corner of the timelist box.
+  move the title box two down 1-1/4 inch.
+  move the name box two to the top left corner of the title box two.
+  move the score box two to the top left corner of the title box two.
+  move the score box two right 1-1/2 inch.
+  
+  Put the score query box's top plus 7-3/5 inch into a spot's y.  
+  Put the score query box's left plus 3-2/3 inch into the spot's x. 
+  make the home button given the spot and "Volver".
+
+the control number is a number.
+
+to show the scores interface given a level string:
+  show the arrow cursor.
+  Fill the score query box with the white color.
+  Use medium letters.
+  Write "Nivel " then the level then ": Puntuaciones"  with the black pen at the top of the score query box.
+  Use medium letters.
+  Write "Por movimientos" with the black pen at the top of the movement list box.
+  Write "Por tiempo" with the black pen at the top of the timelist box.
+  Draw the score query box.
+  Draw the timelist box.
+  Draw the title box.
+  Draw the name box.
+  use small letters.
+  write "Nombre:" in the middle of the name box.
+  Draw the score box.
+  write "Puntuacion:" in the middle of the score box.
+   Draw the title box two.
+  use small letters.
+  write "Nombre:" in the middle of the name box two.
+  Draw the name box two.
+  write "Puntuacion:" in the middle of the score box two.
+  Draw the score box two.
+  imagine a box 3 inch by 1 inch .
+  draw the movement list box.
+  draw move list.
+  draw time list.
+  Draw the home button.
+  refresh the screen.  
+  
+the records box is a box.
+the record box is a box.
+the second records box is a box.  
+
+To draw move list:
+  imagine the records box 3 inch by 4-1/4 inch.
+  move the records box to the top left corner of the movement list box.
+  move the records box down 1-1/4 inch.
+  draw the records box.
+  imagine the record box 3 inch by 1/2 inch.
+  imagine the data box 1-1/2 inch by 1/2 inch.
+  move the record box to the top left corner of the records box.
+  put 0 to the control number.
+  loop.
+  Get a score record from the movement records.
+  If the score record is nil, break.
+  add 1 to the control number.
+  move the record box down 1/2 inch.
+  draw the record box with the green color.
+  move the data box to the top left corner of the record box.
+  use small letters.
+  write the score record's player in the middle of the data box.
+  draw the data box.
+  move the data box to the right of the record box.
+   write the score record's score in the middle of the data box.
+  draw the data box.
+  if the control number is 7,break.
+  repeat.
+  
+To draw time list:
+  imagine the second records box 3 inch by 4-1/4 inch.
+  move the second records box to the top left corner of the timelist box.
+  move the second records box down 1-1/4 inch.
+  draw the second records box.    
+  imagine the record box 3 inch by 1/2 inch.
+  imagine the data box 1-1/2 inch by 1/2 inch.
+  move the record box to the top left corner of the second records box.
+  put 0 to the control number.
+  loop.
+  Get a score record from the time records.
+  If the score record is nil, break.
+  add 1 to the control number.
+  move the record box down 1/2 inch.
+  draw the record box with the green color.
+  move the data box to the top left corner of the record box.
+  use small letters.
+  write the score record's player in the middle of the data box.
+  draw the data box.
+  move the data box to the right of the record box.
+  write the score record's score in the middle of the data box.
+  draw the data box.
+  if the control number is 7,break.
+  repeat.    
+
+To draw the interface:
+  Draw the background. 
+  imagine a box 3 inch by 10 inch.
+  Move the box to the top left corner of the screen's box.
+  Draw and fill the box with the gray color.
+  imagine a second box 15 inch by 1 inch.
+  move the second box to the bottom of the screen's box.
+  Draw and fill the second box with the gray color.
+  imagine a third box 2-1/2 inch by 3 inch.
+  center the third box in the box(vertically).
+  center the third box in the box(horizontally).
+  Draw and fill the third box with the white color.
+   imagine a title box 2-1/2 inch by 1/2 inch.
+  Move the title box to the top left corner of the third box.
+  Draw the title box.
+  Draw "Partida actual" in the center of the title box.
+  
+  imagine a level box 2-1/2 inch by 1/2 inch.
+  Move the level box to the top left corner of the third box.
+  Move the level  box down 1/2 inch.  
+  Draw "Nivel:  "then the current difficulty in the center of the level box.
+  
+  imagine a name box 2-1/2 inch by 1/2 inch.
+  Move the name box to the top left corner of the third box.
+  Move the name  box down 1 inch.  
+  Draw "Nombre: "then the score's player in the center of the name box.  
+  
+  imagine the mov box 2-1/2 inch by 1/2 inch.
+  Move the mov box to the top left corner of the third box.
+  Move the mov  box down 1-1/2 inch.  
+  Draw  "Movimientos:  " then the num moves in the center of the mov box.  
+
+  imagine a time box 2-1/2 inch by 1/2 inch.
+  Move the time box to the top left corner of the third box.
+  Move the time  box down 2 inch.  
+\  Draw "Tiempo: 00 Seg." then the quotient in the center of the time box.  
+
+  Put the screen's center-bottom into a spot.
+  Put the screen's bottom minus 1/4 inch into the spot's y.
+  Put the screen's left plus 7 inch into the spot's x. 
+  make the check button given the spot and "Verificar".
+  Put the screen's left plus 9 inch into the spot's x. 
+  make the  back button given the spot and "Cancelar".

@@ -1,0 +1,18 @@
+\****
+\ImplementaciónNaturalística-ARegistrarPutuaciones
+\Implementación del requerimiento transversal que permite almacenar las puntuaciones de una partida a partir del CU terminar juego
+\Autor: José Antonio Juárez Romero
+\Version: 05/22
+\****
+To register the score:
+  if the score's level is "Facil", put "C:\AplicacionLudica\Persistencia\easyScores.txt"  into a path.
+  if the score's level is "Medio", put "C:\AplicacionLudica\Persistencia\mediumScores.txt"  into the path.
+  if the score's level is "Dificil", put "C:\AplicacionLudica\Persistencia\hardScores.txt"  into the path.
+  if the path is not in the file system, create the path in the file system.
+  read the path into a buffer called original.
+  put "T" then " - " then the  score's player then " - " then the score's time into a string called auxiliar.
+  write the original then the auxiliar then the crlf string to the path. 
+  read the path into the original.
+  put "M" then " - " then the  score's player then " - " then the score's movs  into the auxiliar.
+  write the original then the auxiliar then the crlf string to the path. 
+  If the i/o error is not blank, debug the i/o error.

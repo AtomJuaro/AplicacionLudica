@@ -1,0 +1,13 @@
+\****
+\ImplementaciónNaturalística-Inicio
+\Definición de la rutina principal del sistema, punto de arranque del sistema.
+\Autor: José Antonio Juárez Romero
+\Version: 05/22
+\****
+To run:
+  Start up.
+  Initialize our stuff. 
+  show levels.
+  Finalize our stuff. 
+Shut down.
+

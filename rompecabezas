@@ -1,0 +1,92 @@
+\****
+\ImplementaciónNaturalística-Rompecabezas
+\Definiciones que permiten generar y manejar los rompecabezas
+\Autor: José Antonio Juárez Romero
+\Version: 05/22
+\****
+
+A puzzle is a thing with a box, a picture and some pieces.
+
+A piece is a thing with a box, a number and a picture.
+
+To create a puzzle from a path given a piece size:
+  Allocate memory for the puzzle.
+  Make the puzzle's box 6 inches by 6 inches.
+  Center the puzzle's box in the screen's box.
+  Fetch the puzzle's picture from the path.
+  Resize the puzzle's picture to 6 inches by 6 inches.
+  Center the puzzle's picture in the puzzle's box.
+  Cut the puzzle into pieces with the piece size.
+  Splatter the puzzle's pieces.
+\*** for sample image ***
+  Resize the puzzle's picture to 3 inches by 3 inches.
+
+To cut a puzzle into pieces given a piece size:
+  Draw the puzzle's picture.
+  Put the puzzle's left-top into a spot.
+  Loop.
+    Allocate memory for a piece. 
+    Append the piece to the puzzle's pieces.
+    Put the spot and the spot plus the piece size into the piece's box.
+    Extract the piece's picture using the piece's box.
+    Add the piece size to the spot's left.
+    If the spot's left is less than the puzzle's right, repeat.
+    Put the puzzle's left into the spot's left.
+    Add the piece size to the spot's top.
+    If the spot's top is the puzzle's bottom, break.
+  Repeat.
+
+To splatter some pieces:
+  Make a main box 10-2/5 inch by 6-4/5 inch. 
+  Move the main box to the right side of the screen's box.
+  make a work box 3-1/2 inch smaller than the main box.
+  center the work box in the main box(horizontally). 
+  center the work box in the main box(vertically). 
+ Loop.
+    Get a piece from the pieces.
+    If the piece is nil, break.
+    Pick a spot anywhere in the work box. 
+    Round the spot to the nearest multiple of 1/4 inch.
+    Center the piece's box on the spot.
+    Center the piece's picture on the spot.
+  Repeat.
+
+To draw guide image given a puzzle:
+  Draw the puzzle's picture.    
+
+To display a puzzle:
+  Draw the interface.    
+ Show everything in the puzzle.
+ Draw guide image with the puzzle.
+  Loop.
+    Get a piece from the puzzle's pieces.
+    If the piece is nil, break.
+    Draw the piece's picture.
+  Repeat.
+  Refresh the screen.
+
+To track the mouse on a puzzle:
+  Imagine a big box 10-1/5 inch by 7 inch.
+  Move the big box to the right side of the screen's box.
+  Find a piece of the puzzle given the mouse's spot.
+  If the piece is nil, exit.
+  Loop.
+    If the mouse's left button is up, exit.
+    Put the mouse's spot into a spot.
+    Round the spot to the nearest multiple of 1/4 inch.
+    Center the piece's box on the spot.
+    Center the piece's picture on the spot.
+    Display the puzzle.
+    if the piece's box is not in the big box, exit.
+  Repeat. 
+
+To find a piece of a puzzle given a spot:
+  Get the piece from the puzzle's pieces (backwards).
+  If the piece is nil, exit.
+  If the spot is not in the piece's box, repeat.
+
+To fetch a picture from a path:
+  Read the path into a buffer.
+  Create the picture from the buffer.
+
+
